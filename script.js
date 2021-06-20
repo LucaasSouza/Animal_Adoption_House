@@ -509,7 +509,7 @@ function removerUsuario(){
         }
     }
     if(flag == false){
-        alert("Ficha Inexistente")
+        alert("Ficha Inexistente!")
         menuCasaAdocao()
     }
 }
