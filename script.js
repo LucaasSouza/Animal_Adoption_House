@@ -46,7 +46,7 @@ function menuPrincipal(){
         break;
 
         case 4:
-            close()
+            console.log("Até mais!")
         break;
 
         default:
@@ -229,7 +229,7 @@ function menuCasaAdocao(){
                     var flag = false
 
                     for(var i = 0; i < listaAnimal.length; i++){
-                        if(buscaNomeAnimal == listaAnimal[i].nomeAni){
+                        if(buscaNomeAnimal == listaAnimal[i].nomeAnimal){
                             flag = true
                             alert("Cadastro encontrado!")
                             console.log("------------------Inicio da Ficha-------------------")
@@ -239,7 +239,7 @@ function menuCasaAdocao(){
                             console.log("Raça do Pet: " + listaAnimal[i].raça)
                             console.log("Sexo do Pet: " + listaAnimal[i].sexo)
                             console.log("Idade do Pet: " + listaAnimal[i].idade)
-                            console.log("Peso do Pet: " + listaAnimal[i].peso)
+                            console.log("Peso do Pet: " + listaAnimal[i].peso + "kg")
                             console.log("Id do Pet: " + listaAnimal[i].Id)
                             console.log("Situação do Pet: " + listaAnimal[i].situacao)
                             console.log("Disponível para adotar: " + listaAnimal[i].disponivelAdotar)
@@ -269,7 +269,7 @@ function menuCasaAdocao(){
                             console.log("Raça do Pet: " + listaAnimal[i].raça)
                             console.log("Sexo do Pet: " + listaAnimal[i].sexo)
                             console.log("Idade do Pet: " + listaAnimal[i].idade)
-                            console.log("Peso do Pet: " + listaAnimal[i].peso)
+                            console.log("Peso do Pet: " + listaAnimal[i].peso + "kg")
                             console.log("Id do Pet: " + listaAnimal[i].Id)
                             console.log("Situação do Pet: " + listaAnimal[i].situacao)
                             console.log("Disponível para adotar: " + listaAnimal[i].disponivelAdotar)
@@ -389,7 +389,7 @@ function cadastroAnimal(){
         if(pet.chip == listaAnimal[i].chip){
             alert("CHIP já cadastrado!")
             menuCasaAdocao()
-        }  
+        }
     }
     if(flag == false){
         listaAnimal.push(pet)
@@ -582,7 +582,7 @@ function listarAnimais(){
         console.log("Raça do Pet: " + listaAnimal[i].raca)
         console.log("Sexo do Pet: " + listaAnimal[i].sexo)
         console.log("Idade do Pet: " + listaAnimal[i].idade)
-        console.log("Peso do Pet: " + listaAnimal[i].peso)
+        console.log("Peso do Pet: " + listaAnimal[i].peso + "kg")
         console.log("Id do Pet: " + listaAnimal[i].Id)
         console.log("Situação do Pet: " + listaAnimal[i].situacao)
         console.log("Disponível para adotar: " + listaAnimal[i].disponivelAdotar)
@@ -620,7 +620,7 @@ function listarAnimaisAdotar(){
         console.log("Raça do Pet: " + listaAnimalAdotar[i].raca)
         console.log("Sexo do Pet: " + listaAnimalAdotar[i].sexo)
         console.log("Idade do Pet: " + listaAnimalAdotar[i].idade)
-        console.log("Peso do Pet: " + listaAnimalAdotar[i].peso)
+        console.log("Peso do Pet: " + listaAnimalAdotar[i].peso + "kg")
         console.log("Id do Pet: " + listaAnimalAdotar[i].Id)
         console.log("Situação do Pet: " + listaAnimalAdotar[i].situacao)
         console.log("Disponível para adotar: " + listaAnimalAdotar[i].disponivelAdotar)
