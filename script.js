@@ -87,7 +87,6 @@ function cadastroUsuario(){
 function loginUsuario() {
     var flag = false
     var acharCPF = Number(prompt("Insira aqui seu CPF:"))
-
     for (i = 0; i < listaUsuario.length && flag === false; i++) {
         if (acharCPF == listaUsuario[i].CPF) {
             flag = true
@@ -169,13 +168,43 @@ function menuCasaAdocao(){
 
         case 2:
             console.log("Lista Geral de Animais:")
-            listarAnimais()
+            var i = 0
+            while(listaAnimal.length > i){
+                console.log("------------------Inicio da Ficha-------------------")
+                console.log("Nome do Pet: " + listaAnimal[i].nomeAnimal)
+                console.log("Chip do Pet: " + listaAnimal[i].chip)
+                console.log("Espécie do Pet: " + listaAnimal[i].especie)
+                console.log("Raça do Pet: " + listaAnimal[i].raca)
+                console.log("Sexo do Pet: " + listaAnimal[i].sexo)
+                console.log("Idade do Pet: " + listaAnimal[i].idade)
+                console.log("Peso do Pet: " + listaAnimal[i].peso + "kg")
+                console.log("Id do Pet: " + listaAnimal[i].Id)
+                console.log("Situação do Pet: " + listaAnimal[i].situacao)
+                console.log("Disponível para adotar: " + listaAnimal[i].disponivelAdotar)
+                console.log("Dono do Pet: " + listaAnimal[i].donoCPF)
+                console.log("-------------------Fim da Ficha--------------------")
+                i++
+            }
             menuCasaAdocao()
         break;
 
         case 3:
             console.log("Lista Geral de Usuários:")
-            listarUsuarios()
+            var i = 0
+            while(listaUsuario.length > i){
+                console.log("------------------Inicio da Ficha-------------------")
+                console.log("Nome do Usuário: " + listaUsuario[i].nomeUsuario)
+                console.log("CPF do Usuário: " + listaUsuario[i].CPF)
+                console.log("Telefone do Usuário: " + listaUsuario[i].telefone)
+                console.log("Rua do Usuário: " + listaUsuario[i].rua)
+                console.log("Cidade do Usuário: " + listaUsuario[i].cidade)
+                console.log("Estado do Usuário: " + listaUsuario[i].estado)
+                console.log("CEP do Usuário: " + listaUsuario[i].CEP)
+                console.log("Animal adotado nesse cadastro: " + listaUsuario[i].animalAdotado)
+                console.log("Chip do Animal adotado neste cadastro: " + listaUsuario[i].chipAnimal)
+                console.log("-------------------Fim da Ficha--------------------")
+                i++
+            }
             menuCasaAdocao()          
         break;
 
@@ -227,7 +256,6 @@ function menuCasaAdocao(){
                 case 1:
                     var buscaNomeAnimal = prompt("Digite aqui o nome do animal:")
                     var flag = false
-
                     for(var i = 0; i < listaAnimal.length; i++){
                         if(buscaNomeAnimal == listaAnimal[i].nomeAnimal){
                             flag = true
@@ -257,7 +285,6 @@ function menuCasaAdocao(){
                 case 2:
                     var buscaCHIPAnimal = prompt("Digite aqui o CHIP do animal:")
                     var flag = false
-
                     for(var i = 0; i < listaAnimal.length && flag === false; i++){
                         if(buscaCHIPAnimal == listaAnimal[i].chip){
                             flag = true
@@ -297,7 +324,6 @@ function menuCasaAdocao(){
                 case 1:
                     var acharNomeUsuario = prompt("Digite aqui o nome do usuário:")
                     var flag = false
-
                     for(var i = 0; i < listaUsuario.length; i++){
                         if(acharNomeUsuario == listaUsuario[i].nomeUsuario){
                             flag = true
@@ -325,7 +351,6 @@ function menuCasaAdocao(){
                 case 2:
                     var acharCPFUsuario = Number(prompt("Digite aqui o CPF do usuário:"))
                     var flag = false
-
                     for(var i = 0; i < listaUsuario.length; i++){
                         if(acharCPFUsuario == listaUsuario[i].CPF){
                             flag = true
@@ -387,6 +412,7 @@ function cadastroAnimal(){
     var flag = false
     for(var i = 0; i < listaAnimal.length && flag == false; i++){
         if(pet.chip == listaAnimal[i].chip){
+            flag = true
             alert("CHIP já cadastrado!")
             menuCasaAdocao()
         }
@@ -407,7 +433,6 @@ function cadastroAnimal(){
 function removerAnimal(){
     var apagarAnimalCHIP = prompt("Digite aqui o CHIP do animal:")
     var flag = false
-
     for(var i = 0; i < listaAnimal.length && flag === false; i++){
         if(apagarAnimalCHIP == listaAnimal[i].chip){
             flag = true
@@ -437,7 +462,6 @@ function removerAnimal(){
 function editarAnimal(){
     var buscarAnimalCHIP = prompt("Digite aqui o CHIP do animal:")
     var flag = false
-
     for(var i = 0; i < listaAnimal.length && flag === false; i++){
         if(buscarAnimalCHIP == listaAnimal[i].chip){
             flag = true
@@ -488,7 +512,6 @@ function editarAnimal(){
 function removerUsuario(){
     var apagarUsuarioCPF = Number(prompt("Digite aqui o CPF do Usuário:"))
     var flag = false
-
     for(var i = 0; i < listaUsuario.length && flag === false; i++){
         if(apagarUsuarioCPF == listaUsuario[i].CPF){
             flag = true
@@ -517,7 +540,6 @@ function removerUsuario(){
 function editarUsuario(){
     var buscarUsuarioCPF = Number(prompt("Digite aqui o CPF do usuário:"))
     var flag = false
-
     for(var i = 0; i < listaUsuario.length && flag === false; i++){
         if(buscarUsuarioCPF == listaUsuario[i].CPF){
             flag = true
@@ -569,44 +591,6 @@ function editarUsuario(){
     if(flag == false){
         alert("Ficha Inexistente")
         menuCasaAdocao()
-    }
-}
-
-function listarAnimais(){
-    var i = 0
-    while(listaAnimal.length > i){
-        console.log("------------------Inicio da Ficha-------------------")
-        console.log("Nome do Pet: " + listaAnimal[i].nomeAnimal)
-        console.log("Chip do Pet: " + listaAnimal[i].chip)
-        console.log("Espécie do Pet: " + listaAnimal[i].especie)
-        console.log("Raça do Pet: " + listaAnimal[i].raca)
-        console.log("Sexo do Pet: " + listaAnimal[i].sexo)
-        console.log("Idade do Pet: " + listaAnimal[i].idade)
-        console.log("Peso do Pet: " + listaAnimal[i].peso + "kg")
-        console.log("Id do Pet: " + listaAnimal[i].Id)
-        console.log("Situação do Pet: " + listaAnimal[i].situacao)
-        console.log("Disponível para adotar: " + listaAnimal[i].disponivelAdotar)
-        console.log("Dono do Pet: " + listaAnimal[i].donoCPF)
-        console.log("-------------------Fim da Ficha--------------------")
-        i++
-    }
-}
-
-function listarUsuarios(){
-    var i = 0
-    while(listaUsuario.length > i){
-        console.log("------------------Inicio da Ficha-------------------")
-        console.log("Nome do Usuário: " + listaUsuario[i].nomeUsuario)
-        console.log("CPF do Usuário: " + listaUsuario[i].CPF)
-        console.log("Telefone do Usuário: " + listaUsuario[i].telefone)
-        console.log("Rua do Usuário: " + listaUsuario[i].rua)
-        console.log("Cidade do Usuário: " + listaUsuario[i].cidade)
-        console.log("Estado do Usuário: " + listaUsuario[i].estado)
-        console.log("CEP do Usuário: " + listaUsuario[i].CEP)
-        console.log("Animal adotado nesse cadastro: " + listaUsuario[i].animalAdotado)
-        console.log("Chip do Animal adotado neste cadastro: " + listaUsuario[i].chipAnimal)
-        console.log("-------------------Fim da Ficha--------------------")
-        i++
     }
 }
 
